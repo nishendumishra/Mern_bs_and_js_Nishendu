@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Task 2</title>
+  </head>
+  <body>
+    <h1>Task 2</h1>
+    <br />
+    <p>Enter a string to print it in alphabetical order</p>
+
+    <input type="text" id="userInput" placeholder="Enter a string" />
+
+    <button onclick="orderAndDisplay()">Sort</button>
+
+    <p id="result"></p>
+    <script>
+      function sortString(x) {
+        let str = x.toString();
+        let sortededStr = str.split("").sort().join("");
+        return sortededStr;
+      }
+
+      function orderAndDisplay() {
+        const userInput = document.getElementById("userInput").value;
+
+        const sorted = sortString(userInput);
+        document.getElementById(
+          "result"
+        ).textContent = `String in alphabetical order: ${sorted}`;
+      }
+    </script>
+  </body>
+</html>
